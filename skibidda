@@ -1,0 +1,179 @@
+local Char = workspace.SynnerXR
+local Tool = Instance.new("Tool")
+Tool.Name = "Total Extermination"
+local Handle = Instance.new("Part")
+Handle.Transparency = 1
+Handle.Name = "Handle"
+Handle.Reflectance = 0.4
+Handle.BrickColor = BrickColor.new("Dark stone grey")
+Handle.Size = Vector3.new(1,0.8,4)
+Handle.Anchored = false
+Handle.CanCollide = false
+Handle.Massless = true
+local Mesh = Instance.new("SpecialMesh")
+Mesh.MeshId = "rbxasset://fonts/sword.mesh"
+Mesh.MeshType = Enum.MeshType.FileMesh
+Mesh.TextureId = "rbxasset://textures/SwordTexture.png"
+Mesh.VertexColor = Vector3.new(1,1,1)
+Mesh.Scale = Vector3.new(1,1,1)
+Mesh.Parent = Handle
+Handle.Parent = Tool
+Tool.GripUp = Tool.GripUp + Vector3.new(0,0,-1)
+Tool.Parent = workspace:WaitForChild("SynnerXR")
+
+Handle.BrickColor = BrickColor.new("Dark red")
+local Spark = Instance.new("Sparkles")
+Spark.Color = Color3.new(0.443137, 0, 0)
+Spark.Parent = Handle
+
+Tool.Activated:Connect(function()
+	
+	local chargeup = Instance.new("Sound")
+	chargeup.SoundId = "rbxassetid://6464007319"
+	chargeup.Parent = workspace.SynnerXR.Torso
+	chargeup:Play()
+	game.Debris:AddItem(chargeup,3)
+	
+	task.wait(1)
+	
+	for i = 1,6 do
+		
+		Char.HumanoidRootPart.CFrame *= CFrame.new(0,0,-5)
+			
+		local p1 = Char.Head:Clone()
+		for i,pla in pairs(p1:GetChildren()) do
+			pla:Destroy()
+		end
+		local p2 = Char.Torso:Clone()
+		local p3 = Char["Left Arm"]:Clone()
+		local p4 = Char["Right Arm"]:Clone()
+		local p5 = Char["Left Leg"]:Clone()
+		local p6 = Char["Right Leg"]:Clone()
+		
+		p1.BrickColor = BrickColor.new("Dark red")
+		p1.Transparency = 0.2
+		p1.Parent = workspace
+		p1.Anchored = true
+		p1.CanCollide = false
+		p1.CFrame = Char[p1.Name].CFrame
+		
+		p2.BrickColor = BrickColor.new("Dark red")
+		p2.Transparency = 0.2
+		p2.Parent = workspace
+		p2.Anchored = true
+		p2.CanCollide = false
+		p2.CFrame = Char[p2.Name].CFrame
+		
+		p3.BrickColor = BrickColor.new("Dark red")
+		p3.Transparency = 0.2
+		p3.Parent = workspace
+		p3.Anchored = true
+		p3.CanCollide = false
+		p3.CFrame = Char[p3.Name].CFrame
+		
+		p4.BrickColor = BrickColor.new("Dark red")
+		p4.Transparency = 0.2
+		p4.Parent = workspace
+		p4.Anchored = true
+		p4.CanCollide = false
+		p4.CFrame = Char[p4.Name].CFrame
+		
+		p5.BrickColor = BrickColor.new("Dark red")
+		p5.Transparency = 0.2
+		p5.Parent = workspace
+		p5.Anchored = true
+		p5.CanCollide = false
+		p5.CFrame = Char[p5.Name].CFrame
+		
+		p6.BrickColor = BrickColor.new("Dark red")
+		p6.Transparency = 0.2
+		p6.Parent = workspace
+		p6.Anchored = true
+		p6.CanCollide = false
+		p6.CFrame = Char[p6.Name].CFrame
+		
+		for i,v in pairs(p1:GetChildren()) do
+			v:Destroy()
+		end
+		for i,v in pairs(p2:GetChildren()) do
+			v:Destroy()
+		end
+		for i,v in pairs(p3:GetChildren()) do
+			v:Destroy()
+		end
+		for i,v in pairs(p4:GetChildren()) do
+			v:Destroy()
+		end
+		for i,v in pairs(p5:GetChildren()) do
+			v:Destroy()
+		end
+		for i,v in pairs(p6:GetChildren()) do
+			v:Destroy()
+		end
+		p1.Material = Enum.Material.Neon
+		p2.Material = Enum.Material.Neon
+		p3.Material = Enum.Material.Neon
+		p4.Material = Enum.Material.Neon
+		p5.Material = Enum.Material.Neon
+		p6.Material = Enum.Material.Neon
+
+			
+		game:GetService("TweenService"):Create(p1, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p2, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p3, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p4, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p5, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p6, TweenInfo.new(2), {Transparency = 1}):Play()
+		game:GetService("TweenService"):Create(p1, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		game:GetService("TweenService"):Create(p2, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		game:GetService("TweenService"):Create(p3, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		game:GetService("TweenService"):Create(p4, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		game:GetService("TweenService"):Create(p5, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		game:GetService("TweenService"):Create(p6, TweenInfo.new(2), {Color = Color3.new(0, 0, 0)}):Play()
+		
+		game.Debris:AddItem(p1,2)
+		game.Debris:AddItem(p2,2)
+		game.Debris:AddItem(p3,2)
+		game.Debris:AddItem(p4,2)
+		game.Debris:AddItem(p5,2)
+		game.Debris:AddItem(p6,2)
+		
+		task.wait(0.1)
+		
+		local chargeup = Instance.new("Sound")
+		chargeup.SoundId = "rbxassetid://5416548293"
+		chargeup.Parent = workspace.SynnerXR.Torso
+		chargeup:Play()
+		game.Debris:AddItem(chargeup,3)
+		
+		for i,v in pairs(Char:GetChildren()) do
+			if v:IsA("Part") then
+				v.Anchored = false
+			end
+		end
+		Char["Total Extermination"].Handle.Anchored = false
+		
+end
+	
+	for i,v in pairs(workspace:GetChildren()) do
+		
+		if v:FindFirstChild("Humanoid") then
+			
+			if game.Players[v.Name] ~= "SynnerXR" then
+			
+			local MagnitudeInStuds = (v.PrimaryPart.Position - workspace.SynnerXR.HumanoidRootPart.Position).Magnitude
+				
+				if MagnitudeInStuds <= 12 and v.Name ~= "SynnerXR" and not v:FindFirstChild("AlrDead") then
+					
+					local thing = Instance.new("Folder")
+					thing.Name = "AlrDead"
+					thing.Parent = v
+					
+					-- die
+					
+				end
+		end
+		end
+	end
+	
+end)
