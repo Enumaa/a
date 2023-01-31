@@ -1,0 +1,26 @@
+local TweenService = game:GetService("TweenService")
+
+local Character = workspace.SynnerXR
+local HightLight = Instance.new("HighLight")
+HightLight.FillTransparency = 1
+HightLight.Parent = Character
+
+local info = TweenInfo.new(2)
+
+local goal = {}
+
+task.wait()
+
+local ColorList = {Color3.fromRGB(255, 162, 47), Color3.fromRGB(255, 15, 67), Color3.fromRGB(103, 33, 255)}
+
+while true do
+	local RandomColor = ColorList[math.random(1, #ColorList)]
+	goal.OutlineColor = RandomColor
+
+	task.wait(1)
+
+	local tween = TweenService:Create(HightLight, info, goal)
+	tween:Play()
+
+	task.wait(2)
+end
