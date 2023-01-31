@@ -1,0 +1,7 @@
+for i,v in pairs(workspace:GetChildren()) do
+	
+	if v:IsA("Part") then
+		v:Destroy()
+	end
+	
+end
